@@ -5,6 +5,7 @@ const app=express()
 
 app.use(cors({
     origin:'http://localhost:3000',
+    https://santhoshdb-crud.onrender.com,
     methods:['PUT','GET','POST','DELETE']
 }))
 
