@@ -15,7 +15,7 @@ function CrudPage()
     //insert query
 
     const addFoodData=()=>{
-        Axios.post("http://localhost:3001/insert",{foodName,description})
+        Axios.post("https://santhoshdb-crud.onrender.com/insert",{foodName,description})
         .then((response)=>{
             console.log(response)
         })
@@ -26,7 +26,7 @@ function CrudPage()
 
      //getData
     const fetchData=()=>{
-        Axios.get("http://localhost:3001/read").then((response)=>{
+        Axios.get("https://santhoshdb-crud.onrender.com/read").then((response)=>{
             console.log(response.data)
             setFoodList(response.data)
         })
@@ -35,7 +35,7 @@ function CrudPage()
     //  update data 
     
     const updateFood = (id, index) => {
-    Axios.put("http://localhost:3001/update", {
+    Axios.put("https://santhoshdb-crud.onrender.com/update", {
         id,newFoodName: newFoodName[index] || foodList[index].foodName,
         newDescription: newDescription[index] || foodList[index].description,
     })
@@ -45,7 +45,7 @@ function CrudPage()
 
     //delete
     const deleteFood=(id)=>{
-        Axios.delete(`http://localhost:3001/delete/${id}`).then(()=>fetchData())
+        Axios.delete(`https://santhoshdb-crud.onrender.com/delete/${id}`).then(()=>fetchData())
     }
 
     return(
