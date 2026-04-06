@@ -4,17 +4,21 @@ const mongoose=require("mongoose")
 const app=express()
 
 app.use(cors({
-    origin:'http://localhost:3000',
-    https:"https://santhoshdb-crud.vercel.app/",
-    methods:['PUT','GET','POST','DELETE']
-}))
+    origin: [
+        "http://localhost:3000",
+        "https://santhoshdb-crud.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 app.use(express.json())
 
-const FoodModel=require("./models/food")
-mongoose.connect("mongodb+srv://user:user@cluster0.0rmgbcc.mongodb.net/?appName=Cluster0/food")
-.then(()=>console.log("connect"))
-.catch(err=>console.log(err))
+mongoose.connect("mongodb+srv://user:user@cluster0.0rmgbcc.mongodb.net/food?retryWrites=true&w=majority")
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.log(err));
+
+const FoodModel = require("./models/food");
 
 //insert the data
 
