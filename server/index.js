@@ -5,8 +5,8 @@ const app=express()
 
 app.use(cors({
     origin:'http://localhost:3000',
-    https://santhoshdb-crud.onrender.com,
-    methods['PUT','GET','POST','DELETE']
+    https:"https://santhoshdb-crud.vercel.app/",
+    methods:['PUT','GET','POST','DELETE']
 }))
 
 app.use(express.json())
