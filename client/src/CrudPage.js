@@ -66,7 +66,7 @@ function CrudPage()
                 <th>FoodName</th>
                 <th>FoodDescription</th>
                 <th>Edit</th>
-                {/* <th>Delete</th> */}
+                <th>Delete</th>
             </tr>
             <tbody>
                 {foodList.map((val,index)=>(
@@ -78,9 +78,9 @@ function CrudPage()
                  <input type='text' placeholder='UpdatedDescription' onChange={(e) => {const arr = [...newDescription]; arr[index] = e.target.value;setNewDescription(arr);}}/>
                  <button className='btn btn-primary' onClick={() => updateFood(val._id, index)}>Edit</button>
                         </td>
-                        {/* <td>
+                        <td>
                              <button className='btn btn-danger' onClick={()=>deleteFood(val._id)}>Delete</button>
-                        </td> */}
+                        </td>
                     </tr>
                 ))}
             </tbody>
